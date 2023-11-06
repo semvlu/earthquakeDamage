@@ -1,2 +1,2 @@
 # Richter's Predictor: Modeling Earthquake Damage
-website: [https://www.drivendata.org/competitions/57/nepal-earthquake/page/134/]
+[Website](https://www.drivendata.org/competitions/57/nepal-earthquake/page/134/)
