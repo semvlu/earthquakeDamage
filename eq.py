@@ -146,8 +146,11 @@ for i in range(df.shape[0]):
         elif lbl['damage_grade'][i]==3:
             info[10][2]+=1
 
-for i in info:
-    plt.plot(i)
-    plt.legend(['0','2','3','4','5','6','7','8','9','10','11'])
+fig,ax= plt.subplots(4, 3) 
 
+for i in range(4):
+    for j in range(3):
+        if(3*i+j < 11):
+            ax[i,j].plot(info[3*i+j])
 plt.show()
+
