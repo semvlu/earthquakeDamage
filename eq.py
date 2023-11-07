@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from pandas.core.frame import DataFrame
+import matplotlib.pyplot as plt
 
 df = pd.read_csv("train_values.csv")
 # change categorical variables into dummy/indicator variables
@@ -54,3 +55,97 @@ for i in range(len(count)):
 print(cnt)
 print(sum)
 """
+lbl = pd.read_csv("train_labels.csv")
+info = []
+for i in range(11):
+    info.append([0,0,0])
+
+for i in range(len(df.shape[0])):
+    if df['has_secondary_use'][i]==0:
+        if lbl['damage_grade'][i] == 1:
+            info[0][0]+=1
+        elif lbl['damage_grade'][i] == 2:
+            info[0][1]+=1
+        elif lbl['damage_grade'][i]==3:
+            info[0][2]+=1
+    elif df['has_secondary_use'][i]==2:
+        if lbl['damage_grade'][i] == 1:
+            info[1][0]+=1
+        elif lbl['damage_grade'][i] == 2:
+            info[1][1]+=1
+        elif lbl['damage_grade'][i]==3:
+            info[1][2]+=1
+    elif df['has_secondary_use'][i]==3:
+        if lbl['damage_grade'][i] == 1:
+            info[2][0]+=1
+        elif lbl['damage_grade'][i] == 2:
+            info[2][1]+=1
+        elif lbl['damage_grade'][i]==3:
+            info[2][2]+=1
+
+    elif df['has_secondary_use'][i]==4:
+        if lbl['damage_grade'][i] == 1:
+            info[3][0]+=1
+        elif lbl['damage_grade'][i] == 2:
+            info[3][1]+=1
+        elif lbl['damage_grade'][i]==3:
+            info[3][2]+=1
+
+    elif df['has_secondary_use'][i]==5:
+        if lbl['damage_grade'][i] == 1:
+            info[4][0]+=1
+        elif lbl['damage_grade'][i] == 2:
+            info[4][1]+=1
+        elif lbl['damage_grade'][i]==3:
+            info[4][2]+=1
+    
+    elif df['has_secondary_use'][i]==6:
+        if lbl['damage_grade'][i] == 1:
+            info[5][0]+=1
+        elif lbl['damage_grade'][i] == 2:
+            info[5][1]+=1
+        elif lbl['damage_grade'][i]==3:
+            info[5][2]+=1
+
+    elif df['has_secondary_use'][i]==7:
+        if lbl['damage_grade'][i] == 1:
+            info[6][0]+=1
+        elif lbl['damage_grade'][i] == 2:
+            info[6][1]+=1
+        elif lbl['damage_grade'][i]==3:
+            info[6][2]+=1
+
+    elif df['has_secondary_use'][i]==8:
+        if lbl['damage_grade'][i] == 1:
+            info[7][0]+=1
+        elif lbl['damage_grade'][i] == 2:
+            info[7][1]+=1
+        elif lbl['damage_grade'][i]==3:
+            info[7][2]+=1
+
+    elif df['has_secondary_use'][i]==9:
+        if lbl['damage_grade'][i] == 1:
+            info[8][0]+=1
+        elif lbl['damage_grade'][i] == 2:
+            info[8][1]+=1
+        elif lbl['damage_grade'][i]==3:
+            info[8][2]+=1
+
+    elif df['has_secondary_use'][i]==10:
+        if lbl['damage_grade'][i] == 1:
+            info[9][0]+=1
+        elif lbl['damage_grade'][i] == 2:
+            info[9][1]+=1
+        elif lbl['damage_grade'][i]==3:
+            info[9][2]+=1
+    elif df['has_secondary_use'][i]==11:
+        if lbl['damage_grade'][i] == 1:
+            info[10][0]+=1
+        elif lbl['damage_grade'][i] == 2:
+            info[10][1]+=1
+        elif lbl['damage_grade'][i]==3:
+            info[10][2]+=1
+
+for i in info:
+    plt.plot(i)
+plt.show()
