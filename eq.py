@@ -60,7 +60,7 @@ info = []
 for i in range(11):
     info.append([0,0,0])
 
-for i in range(len(df.shape[0])):
+for i in range(df.shape[0]):
     if df['has_secondary_use'][i]==0:
         if lbl['damage_grade'][i] == 1:
             info[0][0]+=1
